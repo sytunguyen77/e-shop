@@ -1,0 +1,91 @@
+  // const data = [
+   //    {
+   //       id: 1,
+   //       img: "https://images.pexels.com/photos/1972115/pexels-photo-1972115.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+   //       img2: "https://images.pexels.com/photos/1163194/pexels-photo-1163194.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+   //       title: "Long Sleeve Graphic T-Shirt",
+   //       isNew: true,
+   //       oldPrice: 19,
+   //       price: 12,
+   //    },
+   //    {
+   //       id: 2,
+   //       img: "https://images.pexels.com/photos/1759619/pexels-photo-1759619.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+   //       title: "Coat",
+   //       isNew: true,
+   //       oldPrice: 19,
+   //       price: 12,
+   //    },
+   //    {
+   //       id: 3,
+   //       img: "https://images.pexels.com/photos/15355758/pexels-photo-15355758.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+   //       title: "Skirt",
+   //       oldPrice: 19,
+   //       price: 12,
+   //    },
+   //    {
+   //       id: 4,
+   //       img: "https://images.pexels.com/photos/3317434/pexels-photo-3317434.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+   //       title: "Hat",
+   //       oldPrice: 19,
+   //       price: 12,
+   //    },
+   // ];
+
+
+   import React from "react";
+import "./Card.scss";
+import { Link } from "react-router-dom";
+
+export const Card = ({ item }) => {
+   return (
+      <Link className="link" to={`/product/${item.id}`}>
+         <div className="card">
+            <div className="image">
+               {item.isNew && <span>New Season</span>}
+               <img src={item.img} alt="" className="mainImg" />
+               <img src={item.img2} alt="" className="secondImg" />
+            </div>
+            <h2>{item.title}</h2>
+            <div className="prices">
+               <h3>${item.oldPrice}</h3>
+               <h3>${item.price}</h3>
+            </div>
+         </div>
+      </Link>
+   );
+};
+
+   const data = [
+      {
+         id: 1,
+         img: "https://images.pexels.com/photos/1972115/pexels-photo-1972115.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+         img2: "https://images.pexels.com/photos/1163194/pexels-photo-1163194.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+         title: "Long Sleeve Graphic T-Shirt",
+         isNew: true,
+         oldPrice: 19,
+         price: 12,
+      },
+      {
+         id: 2,
+         img: "https://images.pexels.com/photos/1759619/pexels-photo-1759619.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+         title: "Coat",
+         isNew: true,
+         oldPrice: 19,
+         price: 12,
+      },
+      {
+         id: 3,
+         img: "https://images.pexels.com/photos/15355758/pexels-photo-15355758.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+         title: "Skirt",
+         oldPrice: 19,
+         price: 12,
+      },
+      {
+         id: 4,
+         img: "https://images.pexels.com/photos/3317434/pexels-photo-3317434.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+         title: "Hat",
+         oldPrice: 19,
+         price: 12,
+      },
+   ];
